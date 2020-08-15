@@ -1,0 +1,28 @@
+.wrapper {
+    padding-left: 18px;
+    padding-right: 18px;
+    /*  added 36 pixels here to account for padding in the border-box on * */ 
+    max-width: 1236px;
+    margin-left: auto;
+    margin-right: auto;
+    /* keeps padding of children from showing in gutters */
+    overflow: hidden;
+
+    &--medium {
+        max-width: 976px;
+    }
+
+    /* embedded wrappers are not needed so cancel out extra padding */
+    .wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &--b-margin {
+        margin-bottom: 1rem;
+
+        @mixin atSmall {
+            margin-bottom: 3.875rem; /* 62px/16/px */
+        }
+    }
+}
