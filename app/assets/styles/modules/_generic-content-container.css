@@ -1,0 +1,18 @@
+.generic-content-container {
+
+    p {
+        line-height: 1.65; 
+        margin: 1.8rem 0;
+
+        @mixin atSmall {
+            font-size: 1.125rem; /* 18/16 px */
+        }
+    }
+
+    /* this bold is against BEM but the style are scoped to this class */
+    /* you can't be sure that the BEM classes will be applied from 
+       automated sources. */
+    p a {
+        font-weight: 700;
+    }
+}
