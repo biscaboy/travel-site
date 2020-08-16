@@ -1,6 +1,4 @@
 .wrapper {
-    padding-left: 18px;
-    padding-right: 18px;
     /*  added 36 pixels here to account for padding in the border-box on * */ 
     max-width: 1236px;
     margin-left: auto;
@@ -10,6 +8,26 @@
 
     &--medium {
         max-width: 976px;
+    }
+
+    &--no-padding-until-meduim {
+        padding-left: 0;
+        padding-right: 0;
+
+        @mixin atMedium {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+    }
+
+    &--no-padding-until-large {
+        padding-left: 0;
+        padding-right: 0;
+
+        @mixin atLarge {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
     }
 
     /* embedded wrappers are not needed so cancel out extra padding */
