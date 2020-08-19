@@ -10,7 +10,12 @@
     }
     
     @mixin atMedium {
+        position: fixed;
         background-color: rgba($mainBlue, .3);
+
+        &--dark {
+            background-color: rgba(23, 51, 72, .85);
+        }
     }
 
     &__btn-container {
@@ -26,11 +31,18 @@
         transform: translateX(-50%);
         background-color: $mainBlue;
         padding: 13px 29px;
+        transition: transform .3s ease-out;
 
         @mixin atMedium {
             left: auto;
             transform: translateX(0);
             padding: 25px 36px;
+
+            /* only used when this property exists on the parent. */
+            .site-header--dark & {
+                transform: scale(.55);
+                transform-origin: 0 0;
+            }
         }
 
     }
@@ -116,6 +128,7 @@
             padding-top: 0;
             transform: scale(1);
             opacity: 1;
+            z-index: 100;
         }
 
         &--is-visible {
